@@ -1,6 +1,7 @@
 import React from "react"
 import { Navbar, Nav } from "react-bootstrap"
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import Scrollchor from 'react-scrollchor';
 
 const Header = () => { 
     
@@ -71,9 +72,7 @@ return(
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
              {menu.items.map((item, i) => (
-                <Nav.Link as={Link} to={item.url}>
-                  <b class="text-light">{item.title}</b>
-                </Nav.Link>
+               <Scrollchor className="nav-link" to={item.url} ><b class="text-light">{item.title}</b></Scrollchor> 
              ))}
             </Nav>
           </Navbar.Collapse>
@@ -83,6 +82,7 @@ return(
   </div>
   </div>
 )
+
 }
 
 export default Header
