@@ -38,7 +38,7 @@ return(
     <div id="top"></div>  
         <div className="home-main-banner">
 
-        <div className="container">
+        
          <div className="row">
 
             <div className="col-sm-6 banner-left">
@@ -54,8 +54,7 @@ return(
     
             </div>
         </div>
-        </div>    
-
+       
         </div>
 
         <div className="clear"></div>

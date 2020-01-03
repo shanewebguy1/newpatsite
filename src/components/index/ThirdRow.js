@@ -1,6 +1,6 @@
 import React from 'react';
 import {  useStaticQuery, graphql } from 'gatsby';
-import ReactHtmlParser from 'react-html-parser';
+
 
 
 const ThirdRow = () => { 
@@ -40,12 +40,10 @@ return(
 
             <div id={data.anchor_link}></div>
 
-            <div className="row-title">{ReactHtmlParser(data.row_title) }</div>
+            <div className="row-title" dangerouslySetInnerHTML={{ __html: data.row_title }} />
 
-
-            <div className="row-content">
-               {ReactHtmlParser(data.row_content) }
-            </div>
+            <div className="row-content" dangerouslySetInnerHTML={{ __html: data.row_content }} />
+ 
         </div>
         ))}
 
