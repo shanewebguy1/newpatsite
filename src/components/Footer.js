@@ -75,7 +75,7 @@ return(
             
 
                 <a href="shanewebguy.com"  className="swg-logo-link-footer">
-                <img alt="shanegif" src={ShaneGif} /> 
+                
 
                 </a>
             </div>
