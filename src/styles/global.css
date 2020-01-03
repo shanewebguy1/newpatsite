@@ -385,3 +385,5 @@ body>header,  .navbar-fixed-top, header .navbar.navbar-portfolio {
     }
 
     div { width:100%; }
+
+    .hidden { display: none; }

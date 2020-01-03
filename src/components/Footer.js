@@ -2,7 +2,7 @@ import React  from 'react'
 import { Link } from 'gatsby';
 import {  useStaticQuery, graphql } from 'gatsby';
 import ShaneGif from '../images/shane-web-guy-logo-animation-v7.gif';
-
+import { Form, Button } from "react-bootstrap"
 
 
 const Footer = () => { 
@@ -58,8 +58,25 @@ return(
             <div className="col-sm-3 first-block" dangerouslySetInnerHTML={{ __html: data.first_block }} />
 
             <div className="col-sm-6 second-block"> 
+
+                <h3>Message</h3>
+
+                <Form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                    <p class="hidden"> <label>Don’t fill this out if you're human: <input name="bot-field" /></label></p>
+                    <Form.Group controlId="contactFoerm.Email">
+                    <Form.Control name="email" type="email" placeholder="Email..." />
+                    </Form.Group>
+                    <Form.Group controlId="contactFoerm.Message">
+                    <Form.Control as="textarea" rows="3" />
+                    </Form.Group>
+                    <Button type="submit">Send</Button>
+                </Form>
+
+            
+
                 <a href="shanewebguy.com"  className="swg-logo-link-footer">
                 <img alt="shanegif" src={ShaneGif} /> 
+
                 </a>
             </div>
 
