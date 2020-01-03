@@ -3,16 +3,16 @@ import { graphql } from "gatsby"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
-const BlogpostLayout = ({ data }) => {
-  const post = data.wordpressPost
+const PageLayout = ({ data }) => {
+  const page = data.wordpressPage
   return (
     <div>
       <Header />
       <main>
         <div className="container">
           <div className="row justify-content-md-center">
-            <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
+            <div dangerouslySetInnerHTML={{ __html: page.content }} />
           </div>
         </div>
       </main>
@@ -21,18 +21,15 @@ const BlogpostLayout = ({ data }) => {
   )
 }
 
-export default BlogpostLayout
+export default PageLayout
 
 export const query = graphql`
   query($slug: String!) {
-    wordpressPost(slug: { eq: $slug }) {
+    wordpressPage(slug: { eq: $slug }) {
       content
       title
       featured_media {
         source_url
-      }
-      categories {
-        name
       }
       excerpt
     }

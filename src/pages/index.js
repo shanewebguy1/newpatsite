@@ -8,10 +8,8 @@ export default ({ data }) => {
   console.log(data)
   return (
     <PrimaryLayout column="col-xs-6">
-      {data.allWordpressPost.nodes.map(node => (
+      {data.allWordpressPage.nodes.map(node => (
         <Post
-          alt={node.featured_media.slug}
-          image={node.featured_media.source_url}
           title={node.title}
           excerpt={node.excerpt}
           readMore={node.slug}
@@ -23,7 +21,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-  allWordpressPost{
+  allWordpressPage(filter: {featured_media: {slug: {ne: "null"}}}) {
     nodes {
       slug
       title
