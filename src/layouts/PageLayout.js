@@ -28,9 +28,6 @@ export const query = graphql`
     wordpressPage(slug: { eq: $slug }) {
       content
       title
-      featured_media {
-        source_url
-      }
       excerpt
     }
   }
